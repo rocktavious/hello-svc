@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: hello-svc
+build:
+  artifacts:
+  - image: rocktavious/opslevel-app
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - kubernetes/local/*.yaml
+
+portForward:
+- resourceType: service
+  resourceName: app
+  namespace: default
+  port: 8080
+  localPort: 8080
