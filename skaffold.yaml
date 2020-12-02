@@ -18,3 +18,15 @@ portForward:
   namespace: default
   port: 8080
   localPort: 8080
+
+profiles:
+  - name: prod
+    deploy:
+      kubectl:
+        manifests:
+        - kubernetes/prod/*.yaml
+  - name: staging
+    deploy:
+      kubectl:
+        manifests:
+        - kubernetes/staging/*.yaml
