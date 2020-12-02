@@ -50,6 +50,10 @@ A basic Go program that responds to requests with an environment variable templa
 1. `skaffold delete -p staging`
 2. `skaffold delete -p prod`
 
+## Traffic Pattern
+
+![Traffic Flow](./TrafficFlow.png)
+
 ## Wins
 
 - Localdev is slick, fast and painless
